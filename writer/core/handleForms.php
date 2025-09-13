@@ -147,9 +147,6 @@ if (isset($_POST['markNotificationAsRead'])) {
     }
 }
 
-// ===============================================
-// ===== NEW BLOCK FOR CREATING EDIT REQUEST =====
-// ===============================================
 if (isset($_POST['requestEditBtn'])) {
     $article_id = $_POST['article_id'];
     $user_id = $_SESSION['user_id'];
@@ -166,4 +163,5 @@ if (isset($_POST['requestEditBtn'])) {
         http_response_code(500); // Server error
         echo 'server_error';
     }
+
 }
