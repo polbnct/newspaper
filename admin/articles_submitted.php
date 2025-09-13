@@ -37,9 +37,7 @@ if (!$userObj->isAdmin()) {
     <div class="container mx-auto p-8">
         <div class="max-w-4xl mx-auto">
 
-            <!-- ================================= -->
-            <!-- ===== NEW NOTIFICATION AREA ===== -->
-            <!-- ================================= -->
+
             <div id="notification-container" class="mb-8">
                 <?php
                 // Assumes you have $notificationObj available from your classloader.php
@@ -106,9 +104,7 @@ if (!$userObj->isAdmin()) {
         </div>
     </div>
 
-    <!-- =================================================== -->
-    <!-- ===== JAVASCRIPT FOR FORMS AND NOTIFICATIONS ===== -->
-    <!-- =================================================== -->
+
     <script>
       $(document).ready(function() {
         // Toggle visibility of the edit form on double-click
@@ -164,4 +160,5 @@ if (!$userObj->isAdmin()) {
       });
     </script>
 </body>
+
 </html>
