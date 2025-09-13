@@ -142,20 +142,17 @@ if (isset($_POST['updateArticleVisibility'])) {
 	echo $articleObj->updateArticleVisibility($article_id,$status);
 }
 
-// ==============================================
-// ===== NEW BLOCKS FOR MANAGING EDIT REQUESTS =====
-// ==============================================
 
 if (isset($_POST['approveEditBtn'])) {
     $request_id = $_POST['request_id'];
     $article_id = $_POST['article_id'];
 
-    // Step 1: Mark the request as 'approved' in the edit_requests table
+
     if (isset($editRequestObj)) {
         $editRequestObj->updateRequestStatus($request_id, 'approved');
     }
     
-    // Step 2: Unlock the article by setting is_editable = 1 in the articles table
+
     if (isset($articleObj)) {
         $articleObj->setEditableStatus($article_id, 1); 
     }
@@ -167,11 +164,12 @@ if (isset($_POST['approveEditBtn'])) {
 if (isset($_POST['denyEditBtn'])) {
     $request_id = $_POST['request_id'];
 
-    // Just mark the request as 'denied'
+
     if (isset($editRequestObj)) {
         $editRequestObj->updateRequestStatus($request_id, 'denied');
     }
 
     header("Location: ../edit_requests.php");
     exit;
+
 }
