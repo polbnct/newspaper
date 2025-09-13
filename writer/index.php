@@ -42,9 +42,6 @@ if ($userObj->isAdmin()) {
 
     <div class="container mx-auto p-8">
 
-        <!-- ================================= -->
-        <!-- ===== NOTIFICATION AREA ===== -->
-        <!-- ================================= -->
         <div id="notification-container" class="max-w-4xl mx-auto mb-8">
             <?php
             if (isset($notificationObj)) {
@@ -89,9 +86,6 @@ if ($userObj->isAdmin()) {
                 </form>
             </div>
 
-            <!-- ======================================= -->
-            <!-- ===== "MY SUBMISSIONS" AREA ===== -->
-            <!-- ======================================= -->
             <h2 class="text-5xl text-center text-blue-800 mt-16 mb-8">My Submissions</h2>
             <?php $my_articles = $articleObj->getArticlesByUserID($_SESSION['user_id']); ?>
             <?php if (empty($my_articles)): ?>
@@ -135,10 +129,7 @@ if ($userObj->isAdmin()) {
             <?php endif; ?>
         </div>
     </div>
-    
-    <!-- ================================================= -->
-    <!-- ===== JAVASCRIPT FOR NOTIFICATIONS & REQUESTS ===== -->
-    <!-- ================================================= -->
+
     <script>
         $(document).ready(function() {
             // Logic for dismissing notifications
@@ -189,4 +180,5 @@ if ($userObj->isAdmin()) {
         });
     </script>
 </body>
+
 </html>
